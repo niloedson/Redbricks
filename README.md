@@ -70,7 +70,7 @@ I also just used the `xxd` command to generate an additional `Redbricks_bmp.h` f
 xxd -i Redbricks.bmp > Redbricks_bmp.h
 ```
 
-You can also just download it from here.
+You can also just download it from [here](https://github.com/niloedson/Redbricks/blob/main/Redbricks_bmp.h).
 
 
 
