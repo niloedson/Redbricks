@@ -1,5 +1,5 @@
 # Redbricks
- Simple C library to load and generate the `Redbricks.bmp` file described on [Microsoft Docs](https://docs.microsoft.com/pt-br/windows/win32/gdi/bitmap-storage?redirectedfrom=MSDN).
+ Simple C library to load and generate the `Redbricks.bmp` file described on [Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/gdi/bitmap-storage?redirectedfrom=MSDN).
 
 I was frustrated that I couldn't find the original `Redbricks.bmp` file. 
 
