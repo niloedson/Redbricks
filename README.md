@@ -7,6 +7,10 @@ So I used my own (yet) unfinished `bmp.h` Bitmap library to load it and work wit
 
 
 
+<img src="./Redbricks.bmp" style="zoom:800%"/>
+
+
+
 ## Download `Redbricks.bmp` original file
 
 Just download it from [here](https://github.com/niloedson/Redbricks/blob/main/Redbricks.bmp).
