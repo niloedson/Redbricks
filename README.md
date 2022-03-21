@@ -1,9 +1,9 @@
 # Redbricks
  Simple C library to load and generate the `Redbricks.bmp` file described on [Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/gdi/bitmap-storage?redirectedfrom=MSDN).
 
-I was frustrated that I couldn't find the original `Redbricks.bmp` file. 
+I was frustrated that I couldn't find the original `Redbricks.bmp` file.
 
-So I used my own (yet) unfinished `bmp.h` Bitmap library to load it and work with it. 
+So I used my own (yet) unfinished `bmp.h` Bitmap library to load it and work with it.
 
 
 
@@ -68,7 +68,7 @@ Just download it from [here](https://github.com/niloedson/Redbricks/blob/main/Re
 
 ## Getting `Redbricks.bmp` as an `unsigned char` array
 
-I also just used the `xxd` command to generate an additional `Redbricks_bmp.h` file, so you can load it right away as an `unsigned char` array.
+I also just used the hex dump `xxd` command to generate an additional `Redbricks_bmp.h` file, so you can load it right away as an `unsigned char` array.
 
 ``` bash
 xxd -i Redbricks.bmp > Redbricks_bmp.h
@@ -83,40 +83,40 @@ You can also just download it from [here](https://github.com/niloedson/Redbricks
 ### BITMAPFILEHEADER
 
 ```
-42 4d 		- bfType 		- "BM"
-76 02 00 00 - bfSize 		- 630 (  BITMAPFILEHEADER 
+42 4d       - bfType        - "BM"
+76 02 00 00 - bfSize        - 630 (  BITMAPFILEHEADER 
                                    + BITMAPINFOHEADER 
                                    + RGBQUAD 
-                                   + PIXELARRAY)
-00 00  		- bfReserved1 	- 0
-00 00 		- bfReserved2 	- 0
-76 00 00 00 - bfOffBits 	- 118
+                                   + PIXELARRAY )
+00 00       - bfReserved1   - 0
+00 00       - bfReserved2   - 0
+76 00 00 00 - bfOffBits     - 118
 ```
 
 ### BITMAPINFOHEADER
 
 ```
-28 00 00 00 - biSize 			- 40
-20 00 00 00 - biWidth 			- 32
-20 00 00 00 - biHeight 			- 32
-01 00 		- biPlanes 			- 1
-04 00 		- biBitCount 		- 4
-00 00 00 00 - biCompression 	- 0 (BI_RGB)
-00 00 00 00 - biSizeImage 		- 0 (May be set to zero for BI_RGB bitmaps)
-00 00 00 00 - biXPelsPerMeter 	- 0 (unapplicable)
-00 00 00 00 - biYPelsPerMeter 	- 0 (unapplicable)
-00 00 00 00 - biClrUsed 		- 0 (Uses the maximum number of colors 
+28 00 00 00 - biSize            - 40
+20 00 00 00 - biWidth           - 32
+20 00 00 00 - biHeight          - 32
+01 00       - biPlanes          - 1
+04 00       - biBitCount        - 4
+00 00 00 00 - biCompression     - 0 (BI_RGB)
+00 00 00 00 - biSizeImage       - 0 (May be set to zero for BI_RGB bitmaps)
+00 00 00 00 - biXPelsPerMeter   - 0 (unapplicable)
+00 00 00 00 - biYPelsPerMeter   - 0 (unapplicable)
+00 00 00 00 - biClrUsed         - 0 (Uses the maximum number of colors 
                                      corresponding to the 'biBitCount' 
                                      value for the compression mode 
                                      specified by 'biCompression')
-00 00 00 00 - biClrImportant 	- 0 (How many color indexes required 
+00 00 00 00 - biClrImportant    - 0 (How many color indexes required 
                                      for displaying the bitmap. In this 
                                      case, all colors are required)
 ```
 
 ### RGBQUAD
 
-Reachable after `bfOffBits` offset.
+Colour Palette applied to `Redbricks.bmp` using all 16 available combinations.
 
 ```
 00 00 00 00 - 0 - Black
@@ -138,6 +138,8 @@ ff ff ff 00 - F - White
 ```
 
 ### PIXELARRAY
+
+Raw data reachable after `bfOffBits` offset.
 
 ```
 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00 
